@@ -1,0 +1,256 @@
+/* Color Variables */
+:root {
+    --bg-dark: #1a1a1a;
+    --text-light: #ffffff;
+    --text-gray: #cccccc;
+    --accent-blue: #4A90E2;
+    --gradient-blue: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    --section-spacing: 100px;
+}
+
+/* Base Styles */
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Navigation */
+.nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background: rgba(26, 26, 26, 0.95);
+    backdrop-filter: blur(10px);
+    z-index: 100;
+}
+
+.nav-brand {
+    font-weight: 700;
+    font-size: 18px;
+    color: var(--accent-blue);
+}
+
+.nav-links {
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links a {
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: var(--accent-blue);
+}
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: var(--bg-dark);
+}
+
+.hero-title {
+    font-size: clamp(3rem, 15vw, 12rem);
+    font-weight: 900;
+    letter-spacing: -0.02em;
+    background: var(--gradient-blue);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 30px;
+}
+
+.hero-subtitle {
+    font-size: 1.2rem;
+    color: var(--text-gray);
+    max-width: 600px;
+    line-height: 1.6;
+}
+
+/* Section Titles */
+.section-title {
+    font-size: 2.5rem;
+    font-weight: 900;
+    letter-spacing: 0.1em;
+    margin-bottom: 60px;
+    color: var(--text-light);
+}
+
+/* Work Section */
+.work-section {
+    padding: var(--section-spacing) 40px;
+}
+
+.projects-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 80px;
+}
+
+.project-card {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+    min-height: 500px;
+}
+
+.project-card:nth-child(even) {
+    direction: rtl;
+}
+
+.project-card:nth-child(even) > * {
+    direction: ltr;
+}
+
+.project-content {
+    padding: 40px;
+    background: var(--gradient-blue);
+    border-radius: 20px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.project-title {
+    font-size: 3rem;
+    font-weight: 900;
+    margin-bottom: 20px;
+    color: white;
+}
+
+.project-description {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.project-mockup {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.project-mockup img {
+    max-width: 100%;
+    border-radius: 15px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+}
+
+.project-mockup img:hover {
+    transform: translateY(-10px);
+}
+
+/* About Section */
+.about-section {
+    padding: var(--section-spacing) 40px;
+    background: rgba(255, 255, 255, 0.02);
+}
+
+.about-content {
+    max-width: 800px;
+}
+
+.about-text p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: var(--text-gray);
+}
+
+/* Contact Section */
+.contact-section {
+    padding: var(--section-spacing) 40px;
+}
+
+.contact-content {
+    text-align: center;
+}
+
+.contact-content p {
+    font-size: 1.3rem;
+    margin-bottom: 30px;
+    color: var(--text-gray);
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.social-links a {
+    font-size: 1.1rem;
+    font-weight: 500;
+    padding: 12px 24px;
+    border: 2px solid var(--accent-blue);
+    border-radius: 30px;
+    transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+    background: var(--accent-blue);
+    transform: translateY(-2px);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .nav {
+        padding: 15px 20px;
+    }
+    
+    .nav-links {
+        gap: 20px;
+    }
+    
+    .hero-title {
+        font-size: 4rem;
+    }
+    
+    .work-section,
+    .about-section,
+    .contact-section {
+        padding: 60px 20px;
+    }
+    
+    .project-card {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        text-align: center;
+    }
+    
+    .project-card:nth-child(even) {
+        direction: ltr;
+    }
+    
+    .project-title {
+        font-size: 2.2rem;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .social-links {
+        flex-direction: column;
+        align-items: center;
+    }
+}
